@@ -1,0 +1,33 @@
+{
+  "name": "tedutility",
+  "version": "1.0.0",
+  "description": "ls",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pradeepjha75/newman-reporter-ted.git"
+  },
+  "keywords": [
+    "newman",
+    "reporter",
+    "tedutility",
+    "postman",
+    "api",
+    "api testing",
+    "testing",
+    "test"
+  ],
+  "author": "pradeep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pradeepjha75/newman-reporter-ted/issues"
+  },
+  "homepage": "https://github.com/pradeepjha75/newman-reporter-ted#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "querystring": "^0.2.1"
+  }
+}
