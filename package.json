@@ -1,6 +1,6 @@
 {
-  "name": "tedutility",
-  "version": "1.0.1",
+  "name": "newman-reporter-tedutility",
+  "version": "1.0.8",
   "description": "ls",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/pradeepjha75/newman-reporter-ted.git"
+    "url": "git+ssh://git@github.com/pradeepjha75/newman-reporter-tedutility.git"
   },
   "keywords": [
     "newman",
@@ -23,9 +23,9 @@
   "author": "pradeep",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pradeepjha75/newman-reporter-ted/issues"
+    "url": "https://github.com/pradeepjha75/newman-reporter-tedutility/issues"
   },
-  "homepage": "https://github.com/pradeepjha75/newman-reporter-ted#readme",
+  "homepage": "https://github.com/pradeepjha75/newman-reporter-tedutility#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "querystring": "^0.2.1"

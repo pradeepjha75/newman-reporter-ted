@@ -16,7 +16,6 @@ class HttpService {
     }
 
     this.client = axios.create(axiosOptions);
-    this.sendData({})
   }
 
 
@@ -27,7 +26,7 @@ class HttpService {
     try {
       await this.client.post(url, data);
     } catch (error) {
-      console.log('[-] ERROR: while sending data to InfluxDB', this.context.debug ? error : error.message);
+      console.log('[-] ERROR: while sending data to TedBoard', this.context.debug ? error : error.message);
     }
   }
 };
