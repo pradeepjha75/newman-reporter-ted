@@ -29,7 +29,7 @@ npm install -g newman-reporter-tedutility
 Specify `-r tedutility` option while running the collection
 
 ```bash
-newman run <collection-url> -r tedutility \
+newman run <collection-url> -x -r tedutility \
   --reporter-tedutility-testRunName <testRunName> \
   --reporter-tedutility-accessKey <access-key> \
   --reporter-tedutility-signatureKey <signature-key> \
@@ -44,7 +44,7 @@ Example:
 ```
 # For tedutility version 1.x
 
-newman run https://www.getpostman.com/collections/631643-f695cab7-6878-eb55-7943-ad88e1ccfd65-JsLv -r tedutility \
+newman run https://www.getpostman.com/collections/631643-f695cab7-6878-eb55-7943-ad88e1ccfd65-JsLv -x -r tedutility \
 --reporter-tedutility-testRunName newtest \
 --reporter-tedutility-accessKey _16fdd731cb7a50d995b1abf2e796780f8459895f7cd665d6f9c367405 \
 --reporter-tedutility-signatureKey _9d5c8bb40bf7e9a6e2eb7c3fd20f9105d34afbf4553d3d0 \

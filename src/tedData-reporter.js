@@ -18,16 +18,13 @@ class TedDataReporter {
         skipped: []
       },
       list: [],
-      debug: false
+      debug: true
     };
     
 
     const events = 'start iteration beforeItem item script request test assertion console exception done'.split(' ');
     events.forEach((e) => { if (typeof this[e] == 'function') newmanEmitter.on(e, (err, args) => this[e](err, args)) });
 
-    if (this.context.debug) {
-      console.log('[+] Reporter Options', reporterOptions);
-    }
   }
 
   start(error, args) {
@@ -111,7 +108,6 @@ class TedDataReporter {
   }
 
   assertion(error, args) {
-    
     this.context.currentItem.data.assertions++;
 
     if(error) {
@@ -121,12 +117,9 @@ class TedDataReporter {
       if (this.context.debug) {
         failMessage += `: ${error.message}`;
       }
-      this.context.currentItem.data.message=failMessage;
       this.context.currentItem.data.failed.push(failMessage);
       this.context.currentItem.data.failed_count++;
-      if (this.context.debug) {
-        this.context.assertions.failed.push(failMessage);
-      }
+      this.context.currentItem.data.message=(this.context.currentItem.data.failed).toString();
     } else if(args.skipped) {
       if(this.context.currentItem.data.status !== 'Failed') {
         this.context.currentItem.data.status = 'Skipped';
@@ -145,7 +138,7 @@ class TedDataReporter {
     }
   }
 
-  async item(error, args) {
+  item(error, args) {
     const allowed = ['testname', 'suitename', 'timestamp', 'tags', 'user_agent', 'type', 'status', 'message'];
 
     const filtered = Object.keys(this.context.currentItem.data)
@@ -157,7 +150,7 @@ class TedDataReporter {
 
     const updatedData = this.buildPayload(filtered);
 
-    await this.service.sendData(updatedData);
+    this.service.sendData(updatedData);
   }
 
   done() {
